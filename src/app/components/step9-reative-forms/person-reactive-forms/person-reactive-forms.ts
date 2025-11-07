@@ -23,4 +23,15 @@ export class PersonReactiveForms {
     email: new FormControl('', Validators.required)
   })
 
+  onSubmit(){
+    console.log(this.form.value)
+  }
+
+  onSetValue(){
+    this.form.setValue({
+      firstname:"lakis",
+      lastname:"lalakis",
+      email:"lakis@aueb.gr"
+    })
+  }
 }
