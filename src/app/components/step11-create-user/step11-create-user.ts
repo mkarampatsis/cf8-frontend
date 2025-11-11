@@ -49,4 +49,19 @@ export class Step11CreateUser {
       })
     ])
   })
+
+  phone = this.form.get('phone') as FormArray;
+
+  addPhoneNumber(){
+    this.phone.push(
+      new FormGroup({
+        number: new FormControl('', Validators.required),
+        type: new FormControl('', Validators.required)
+      })
+    )
+  }
+
+  deletePhoneNumber(index:number){
+    this.phone.removeAt(index);
+  }
 }
